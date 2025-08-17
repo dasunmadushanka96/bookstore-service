@@ -1,0 +1,138 @@
+Author
+------
+1. An author can be created and can exists without any books related to him.
+2. An author can also be created with one or many books attached to him.
+
+Book
+-----
+3. A book can be created and can exists without attached to any author.
+4. A book can be created with a new author.
+
+5. A book can be later attached to an existing author.
+
+Customer
+--------
+6. A customer can be created.
+7. A customer can purchase any books from the existing books.
+8. A customer can be listed with all the books he/she purchased.
+
+Requested Book
+---------------
+9. Create a requested book
+
+
+New Functionalities
+===================
+Inventory management
+Requested book
+
+Payloads
+--------
+
+1.An author can be created and can exists without any books
+{
+  "authorName": "Robert C. Martin",
+  "biography": "Robert C. Martin, also known as Uncle Bob, is a software engineer and author of several influential programming books."
+}
+
+2. An author can also be created with one or many books
+{
+  "authorName": "Jane Austen",
+  "biography": "English novelist known primarily for her six major novels.",
+  "books": [
+    {
+      "title": "Pride and Prejudice",
+      "isbn": "978-3-16-148410-0",
+      "price": 19.99,
+      "publicationDate": "1813-01-28"
+    }
+  ]
+}
+
+
+
+3. Books without Author
+{
+  "title": "Harry Potter 1",
+  "isbn": "978-0134685991",
+  "price": 1000.00,
+  "publicationDate": "2018-01-06"
+}
+
+4. Books With New Author
+
+{
+  "title": "Harry Potter 2",
+  "isbn": "978-0134685991",
+  "price": 1000.00,
+  "publicationDate": "2018-01-06",
+  "authors": [
+    {
+      "authorName": "author 1",
+      "biography": "Joshua Bloch is a software engineer and author, known for his work on the Java platform."
+    },
+    {
+      "authorName": "author 2",
+      "biography": "Martin Fowler is a renowned software developer and author, specializing in software architecture and design."
+    }
+  ]
+}
+
+5. Updating Book with existing Author 
+
+http://localhost:8080/updateBook?bookId=4&authorIdToLink=5
+{
+  "title": "4 id changing book with no author 3",
+  "isbn": "9780060853983",
+  "price": 2000.00,
+  "publicationDate": "1990-05-01"
+}
+
+6. Customer Creation
+{
+  "firstName": "Dulmini",
+  "lastName": "Wijekoon",
+  "email": "dulmini@gmail.com",
+  "phone": "+94112524135"
+}
+
+7. Inventory Creation
+
+{
+  "bookId": 1,
+  "quantity": 10,
+  "date": "2025-08-18"
+}
+
+{
+  "bookId": 2,
+  "quantity": 5,
+  "date": "2025-08-18"
+}
+
+8.Purchase Books
+{
+  "customerId": 1,
+  "date": "2025-08-18",
+  "bookDetails": [
+    {
+      "bookId": 1,
+      "quantity": 2
+    },
+    {
+      "bookId": 2,
+      "quantity": 1
+    }
+  ]
+}
+
+9. Requested Book
+
+{
+  "bookName": "SpringBoot Edition 3rd",
+  "authorName": "Dasun Madushanka",
+  "requestDate": "2025-08-18",
+  "requestStatus": "PENDING",
+  "customerName": "Kasun"
+}
+

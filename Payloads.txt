@@ -1,0 +1,52 @@
+Create Book
+------------
+{
+  "title": "Harry Potter",
+  "isbn": "123456-12345",
+  "price": 2000,
+  "publicationDate": "2021-07-10"
+}
+
+{
+  "title": "Civil Law",
+  "isbn": "7263516-142353",
+  "price": 1000,
+  "publicationDate": "2022-07-12"
+}
+
+
+
+Create Customer
+---------------
+{
+  "firstName": "Dulmini",
+  "lastName": "Wijekoon",
+  "email": "dulmini@gmail.com",
+  "phone": "+94112524135"
+}
+
+{
+  "firstName": "Dasun",
+  "lastName": "Madushanka",
+  "email": "dasun@gmail.com",
+  "phone": "+94116543135"
+}
+
+
+Add inventory
+--------------
+{
+  "bookId": 1,
+  "quantity": 10
+}
+{
+  "bookId": 2,
+  "quantity": 5
+}
+
+--------------------------------------------------------
+SELECT * FROM BOOK;
+SELECT * FROM CUSTOMER;
+SELECT * FROM BOOK_INVENTORY;
+SELECT * FROM "order";
+SELECT * FROM PURCHASED_BOOK;
